@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>The Automaton — A Thinking Engine, Anno 1920</title>
+<meta name="description" content="Converse with the Automaton, a mechanical mind that has read everything printed up to 1919 and believes it is 1920.">
+<meta name="theme-color" content="#2b1d0e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Automaton">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=1">
+<link rel="icon" type="image/png" href="icons/icon-192.png?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="app">
+ <header class="mast">
+  <div class="mast-top">
+   <button id="archiveBtn" class="icon-btn" aria-label="Archive of conversations">&#9776;</button>
+   <div class="dateline"><span id="dateline">Anno 1920</span></div>
+   <button id="newBtn" class="icon-btn" aria-label="New conversation" title="A fresh sheet">&#10022;</button>
+  </div>
+  <h1><span class="the">The</span> AUTOMATON</h1>
+  <div class="tag">A Thinking Engine &nbsp;&#9670;&nbsp; Anno 1920</div>
+  <div class="rule"><span>Mechanical Intelligence &middot; Wireless Correspondence &middot; Price One Penny</span></div>
+ </header>
+
+ <main id="feed" class="feed" aria-live="polite">
+  <section id="intro" class="intro">
+   <div class="gear-wrap" aria-hidden="true">
+    <svg class="gear big" viewBox="0 0 100 100"><use href="#gear"/></svg>
+    <svg class="gear small" viewBox="0 0 100 100"><use href="#gear"/></svg>
+   </div>
+   <p class="lede"><span class="drop">B</span>EHOLD a mechanical mind of brass and punched cards, in the noble tradition of Mr. Babbage&rsquo;s Analytical Engine and the celebrated chess-playing Turk. Its cogs have digested every newspaper, encyclopaedia and treatise printed up to the close of the year 1919. Put your question by telegram below, and the engine shall reply.</p>
+   <div class="suggest-h">&mdash; Enquiries Commonly Put to the Engine &mdash;</div>
+   <div id="suggest" class="suggest"></div>
+  </section>
+ </main>
+
+ <form id="composer" class="composer" autocomplete="off">
+  <div class="telegram-label">TELEGRAM &middot; TO THE AUTOMATON</div>
+  <div class="row">
+   <textarea id="input" rows="1" placeholder="Compose your enquiry&hellip;" enterkeyhint="send" maxlength="2000"></textarea>
+   <button id="send" class="send" type="submit" aria-label="Despatch">DESPATCH</button>
+  </div>
+ </form>
+</div>
+
+<aside id="drawer" class="drawer" aria-hidden="true">
+ <div class="drawer-in">
+  <h2>The Archive</h2>
+  <p class="small">Past correspondence, kept in this device&rsquo;s cabinet.</p>
+  <button id="drawerNew" class="brass wide">&#10022; Begin a fresh correspondence</button>
+  <ul id="convList"></ul>
+  <p class="colophon">The Automaton is a work of fancy: a modern contrivance instructed to think as a mind of 1919, aided by genuine passages from books of that age (Project Gutenberg). Its answers may err. Conversations are stored only on this device.</p>
+  <button id="drawerClose" class="brass wide">Close the cabinet</button>
+ </div>
+</aside>
+<div id="scrim" class="scrim"></div>
+
+<svg width="0" height="0" style="position:absolute">
+ <defs>
+  <symbol id="gear" viewBox="0 0 100 100"><path fill="currentColor" d="M43 2h14l2 12a37 37 0 0 1 9 4l10-7 10 10-7 10a37 37 0 0 1 4 9l12 2v14l-12 2a37 37 0 0 1-4 9l7 10-10 10-10-7a37 37 0 0 1-9 4l-2 12H43l-2-12a37 37 0 0 1-9-4l-10 7-10-10 7-10a37 37 0 0 1-4-9L3 57V43l12-2a37 37 0 0 1 4-9l-7-10 10-10 10 7a37 37 0 0 1 9-4zM50 32a18 18 0 1 0 0 36a18 18 0 1 0 0-36z"/></symbol>
+ </defs>
+</svg>
+<script src="app.js?v=1"></script>
+</body>
+</html>
